@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.8.5 (2026-07-02)
+
+* Fix server error (IntegrityError) when adding a document from the sidebar or Documents list page - documents must be added from an object's detail page, so the standalone Add buttons introduced in 0.8.3 have been removed (Fixes #107)
+* Raise a validation error instead of a server error if a document is saved without an associated object
+
+## 0.8.4 (2026-07-02)
+
+* Update the documents panel and document detail page to match the current NetBox card UI - the Add button now appears as a header action (Thanks @julianstolp) (Fixes #93)
+
+## 0.8.3 (2026-07-02)
+
+* Fix InconsistentMigrationHistory errors when upgrading NetBox by removing `__latest__` migration dependencies - PR #102 (Thanks @tacerus) (Fixes #98, #103)
+* Fix exception on Add Document when `allowed_doc_types` is configured - PR #96 (Thanks @shumbashi) (Fixes #92)
+* Skip rendering the documents panel when a model has no allowed document types - PR #99 (Thanks @tacerus)
+* Restore the Add button in the sidebar and in the main Documents page - PR #97 (Thanks @a084ed22)
+* Fix contributing/test instructions - PR #100 (Thanks @tacerus)
+
 ## 0.8.2 (2026-02-13)
 
 * Fix stale ContentType entries from old per-model document tables causing ProtectedError during NetBox upgrades
